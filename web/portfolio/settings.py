@@ -74,8 +74,12 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'verceldb',
+        'USER': 'default',
+        'PASSWORD': '2bNqmHlAivL6',
+        'HOST': 'ep-morning-flower-a4p8bytg-pooler.us-east-1.aws.neon.tech',
+        'PORT': '5432',
     }
 }
 
