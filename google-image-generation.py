@@ -1,3 +1,15 @@
-from download_google_imgs import downloader
+from icrawler.builtin import GoogleImageCrawler
+import sys
 
-downloader.download("face", get_urls=False, output_name=None, num_images=10, root_dir='google_images', add_ons=['4k'], verbose=True)
+num = int(sys.argv[1])
+tag = sys.argv[2]
+folder = sys.argv[3]
+
+google_crawler = GoogleImageCrawler(
+    parser_threads=2,
+    downloader_threads=4,
+    storage={'root_dir': folder})
+
+google_crawler.crawl(
+    keyword=tag,
+    max_num=num, )
